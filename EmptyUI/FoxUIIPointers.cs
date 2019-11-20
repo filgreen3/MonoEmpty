@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 
-namespace Fox.UI
+namespace MonoEmpty.UI
 {
 
     public interface IPointerClick : IGraphicUI

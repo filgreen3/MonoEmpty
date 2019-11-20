@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 
-namespace MonoEmpty.Component
+namespace MonoEmpty.EmptyComponent
 {
     public interface IRenderer: IDrawComponet
     {

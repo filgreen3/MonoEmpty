@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 
-namespace MonoEmpty.Component
+namespace MonoEmpty.EmptyComponent
 {
     public class Sprite :Component, IDrawComponet
     {

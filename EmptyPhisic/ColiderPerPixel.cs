@@ -3,7 +3,7 @@ using Microsoft.Xna;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace MonoEmpty.Component.Phisic
+namespace MonoEmpty.EmptyComponent.Phisic
 {
     /// <summary>
     /// An object that can be used to depict a sprite in world space which can detect pixel level collisions with other CollidableObjects

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
-using MonoEmpty.Component;
+using MonoEmpty.EmptyComponent;
 
-namespace MonoEmpty.Component.Phisic
+namespace MonoEmpty.EmptyComponent.Phisic
 {
     public abstract class AbstactColider : Component
     {

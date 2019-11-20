@@ -207,7 +207,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Camera.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="EmptyDebug\Debug.cs" />
     <Compile Include="EmptyDebug\DebugDrawer.cs" />
     <Compile Include="EmptyComponent\GameCenter.cs" />

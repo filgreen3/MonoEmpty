@@ -1,10 +1,10 @@
-﻿using Fox.UI;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using MonoEmpty.UI;
 
-namespace MonoEmpty.Component.Debug
+namespace MonoEmpty.EmptyComponent.DebugHelp
 {
 
     public class Debug

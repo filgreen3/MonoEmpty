@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonoEmpty.Component.Debug
+namespace MonoEmpty.EmptyComponent.DebugHelp
 {
     static class  DebugDrawer
     {

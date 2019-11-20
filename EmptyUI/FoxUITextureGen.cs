@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Linq;
 
-namespace Fox.UI
+namespace MonoEmpty.UI
 {
 
     public static class FoxUITextureGen

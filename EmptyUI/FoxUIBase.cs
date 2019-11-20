@@ -1,11 +1,11 @@
-﻿using Fox.Component;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using MonoEmpty.EmptyComponent;
 
-namespace Fox.UI
+namespace MonoEmpty.UI
 {
     public static class UIManager
     {

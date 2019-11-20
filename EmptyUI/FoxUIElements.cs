@@ -1,9 +1,10 @@
-﻿using Fox.Component;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Fox.DebugHelper;
+using MonoEmpty.EmptyComponent.DebugHelp;
+using MonoEmpty.EmptyComponent;
 
-namespace Fox.UI
+
+namespace MonoEmpty.UI
 {
     public class Button : Box, IPointerClick
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
-namespace MonoEmpty.Component
+namespace MonoEmpty.EmptyComponent
 {
     public interface ITransform
     {

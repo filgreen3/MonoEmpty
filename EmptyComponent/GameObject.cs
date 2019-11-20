@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MonoEmpty.Component
+namespace MonoEmpty.EmptyComponent
 {
     public class GameObject
     {

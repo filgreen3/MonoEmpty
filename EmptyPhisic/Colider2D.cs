@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
-using MonoEmpty.Component;
+using MonoEmpty.EmptyComponent.DebugHelp;
 
-namespace MonoEmpty.Component.Phisic
+namespace MonoEmpty.EmptyComponent.Phisic
 {
     class Colider2D : AbstactColider
     {
@@ -33,7 +33,7 @@ namespace MonoEmpty.Component.Phisic
                 if (item == this) continue;         
                     count++;                  
             }
-            DebugHelper.Debug.Add(this,count);
+            DebugHelp.Debug.Add(this, count);
             return count > 0;
         }
      

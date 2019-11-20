@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-using MonoEmpty.Component;
+using MonoEmpty.EmptyComponent.DebugHelp;
 
-namespace MonoEmpty.Component.Phisic
+namespace MonoEmpty.EmptyComponent.Phisic
 {
     class Body : Component, IPhisicBody, IUpdateComponent
     {
@@ -46,11 +46,11 @@ namespace MonoEmpty.Component.Phisic
 
             Velocity *= 0.99f;
 
-            DebugHelper.Debug.Add(this, Velocity);
+            Debug.Add(this, Velocity);
 
             
 
-            DebugHelper.Debug.Add(this, Velocity);
+            Debug.Add(this, Velocity);
 
             transform.Position += Velocity;
         }

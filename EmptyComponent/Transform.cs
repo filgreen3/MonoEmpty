@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MonoEmpty.Component
+namespace MonoEmpty.EmptyComponent
 {
     public abstract class Transform : Component,ITransform
     {

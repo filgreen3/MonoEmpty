@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonoEmpty.Component
+namespace MonoEmpty.EmptyComponent
 {
     public interface IUpdateComponent
     {

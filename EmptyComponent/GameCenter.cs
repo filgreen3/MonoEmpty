@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 
-namespace MonoEmpty.Component
+namespace MonoEmpty.EmptyComponent
 {
     public class GameCenter
     {
