@@ -9,7 +9,7 @@ namespace MonoEmpty.EmptyComponent.Phisic
 {
     class Body : Component, IPhisicBody, IUpdateComponent
     {
-
+        protected override Type[] ReqireComoponets => new Type[] { typeof(Transform2D) };
         public Body(GameObject gameObject) : base(gameObject)
         {
         }
@@ -20,7 +20,6 @@ namespace MonoEmpty.EmptyComponent.Phisic
 
         public override void Inicial()
         {
-            ReqireComoponets = new Type[] { typeof(Transform2D) };
             base.Inicial();
             transform = gameObject.GetComponent<Transform2D>();
             Colider = gameObject.GetComponent<Colider2D>();

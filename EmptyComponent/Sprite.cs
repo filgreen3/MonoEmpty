@@ -5,16 +5,15 @@ using System;
 
 namespace MonoEmpty.EmptyComponent
 {
-    public class Sprite :Component, IDrawComponet
+    public class Sprite : Component, IDrawComponet
     {
         public Transform2D GetTransform { get; set; }
 
+
         public override void Inicial()
         {
-            ReqireComoponets = new Type[] { typeof(Transform2D) };
             base.Inicial();
 
-          
             var mp = (float)Transform.SizePower;
             if (texture != null)
             {
@@ -22,30 +21,21 @@ namespace MonoEmpty.EmptyComponent
                 int SizeY = (int)(((int)(texture.Height / mp)) * mp) * (int)mp;
                 pic = new Color[texture.Width * texture.Width];
                 texture.GetData(pic);
-                saveTexture = new RenderTarget2D(texture.GraphicsDevice,texture.Width,texture.Height);
+                saveTexture = new RenderTarget2D(texture.GraphicsDevice, texture.Width, texture.Height);
             }
-
-
             GetTransform = gameObject.GetComponent<Transform2D>();
-
-         
-
         }
 
 
-        public Sprite(GameObject gameObject):base(gameObject)
-        {
-           
-           
+        public Sprite(GameObject gameObject) : base(gameObject) { }
 
-        }
 
 
         public static GraphicsDevice device { get; set; }
 
         public Color[] textureData { get; set; }
         public Texture2D texture { get; set; }
-
+        protected override Type[] ReqireComoponets => new Type[] { typeof(Transform2D) };
 
         RenderTarget2D saveTexture;
 

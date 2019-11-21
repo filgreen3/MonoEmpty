@@ -7,6 +7,8 @@ namespace MonoEmpty.EmptyComponent
 
     public class Transform2D : Transform
     {
+        protected override Type[] ReqireComoponets => null;
+
         public Transform2D(GameObject gameObject):base(gameObject)
         {
           

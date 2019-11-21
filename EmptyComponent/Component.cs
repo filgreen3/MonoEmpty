@@ -7,7 +7,7 @@ namespace MonoEmpty.EmptyComponent
 {
     public abstract class Component
     {
-        protected Type[] ReqireComoponets = { };
+        protected abstract Type[] ReqireComoponets { get;}
         public GameObject gameObject;
         protected Component(GameObject gameObject)
         {

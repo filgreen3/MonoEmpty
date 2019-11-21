@@ -10,6 +10,8 @@ namespace MonoEmpty.EmptyComponent.Phisic
 {
     class Colider2D : AbstactColider
     {
+        protected override Type[] ReqireComoponets => null; 
+
         public Colider2D(GameObject gameObject) : base(gameObject)
         {
         }

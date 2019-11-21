@@ -17,6 +17,6 @@ namespace MonoEmpty.EmptyComponent
         public static void Draw(SpriteBatch spriteBatch) => intance.renderers.ForEach(item => item.Draw(spriteBatch));
         public static void Update() => intance.updateComponents.ForEach(item => item.Update());
 
-
+        
     }
 }

@@ -219,6 +219,9 @@
     <Compile Include="EmptyComponent\IUpdateComponent.cs" />
     <Compile Include="EmptyComponent\Sprite.cs" />
     <Compile Include="EmptyComponent\Transform.cs" />
+    <Compile Include="EmptyDebug\DebugDrawRectangle.cs" />
+    <Compile Include="EmptyDebug\DebugText.cs" />
+    <Compile Include="EmptyDebug\DebugTextPositionObj.cs" />
     <Compile Include="EmptyPhisic\AbstactColider.cs" />
     <Compile Include="EmptyPhisic\Body.cs" />
     <Compile Include="EmptyPhisic\Colider2D.cs" />
