@@ -7,35 +7,39 @@ namespace MonoEmpty.EmptyComponent
 {
     public class Sprite : Component, IDrawComponet
     {
-        public Transform2D GetTransform { get; set; }
-
+        public Transform2D GetTransform { get; protected set; }
 
         public override void Inicial()
         {
             base.Inicial();
 
-            var mp = (float)Transform.SizePower;
+            GetTransform = gameObject.GetComponent<Transform2D>();
             if (texture != null)
             {
-                int SizeX = (int)(((int)(texture.Width / mp)) * mp) * (int)mp;
-                int SizeY = (int)(((int)(texture.Height / mp)) * mp) * (int)mp;
-                pic = new Color[texture.Width * texture.Width];
+                pic = new Color[texture.Width * texture.Height];
                 texture.GetData(pic);
                 saveTexture = new RenderTarget2D(texture.GraphicsDevice, texture.Width, texture.Height);
+
+                GetTransform.SetPosition(new Vector2(texture.Width, texture.Height));
+
+                saveTexture.SetData(pic);
             }
-            GetTransform = gameObject.GetComponent<Transform2D>();
         }
 
 
-        public Sprite(GameObject gameObject) : base(gameObject) { }
+        public Sprite(GameObject gameObject) : base(gameObject)
+        {
 
+
+
+        }
 
 
         public static GraphicsDevice device { get; set; }
 
         public Color[] textureData { get; set; }
         public Texture2D texture { get; set; }
-        protected override Type[] ReqireComoponets => new Type[] { typeof(Transform2D) };
+
 
         RenderTarget2D saveTexture;
 
@@ -56,17 +60,27 @@ namespace MonoEmpty.EmptyComponent
             prevAngle = angle;
 
             angle %= MathHelper.TwoPi;
-            angle = ((int)(Math.Abs(angle) * 32)) / 32f;
+            angle = ((int)(Math.Abs(angle) * 16)) / 16f;
 
             int PIC_WIDTH = texture.Width;
             int PIC_HEIGHT = texture.Height;
 
-            scale = sin.Calculate(angle % MathHelper.Pi) * .5f + 1f;
+            scale = ((int)(sin.Calculate(angle % MathHelper.Pi) * .5f + 1f * 16)) / 16f;
 
             int PIC_WIDTH_NEW = (int)(PIC_WIDTH * scale) + 10;
             int PIC_HEIGHT_NEW = (int)(PIC_HEIGHT * scale) + 10;
+
+            var cosangel = cos.Calculate(angle);
+            var sinangel = sin.Calculate(angle);
+
+
+            //int PIC_WIDTH_NEW = (int)MathHelper.LerpPrecise(PIC_HEIGHT,PIC_WIDTH, cosangel * cosangel);
+            //int PIC_HEIGHT_NEW = (int)MathHelper.LerpPrecise(PIC_HEIGHT, PIC_WIDTH, sinangel * sinangel);
+
+
+
+
             int DIV = (PIC_WIDTH_NEW - PIC_WIDTH) / 2;
-            DIV = (int)(DIV / 1f) * 1;
 
             Color[] bufPic = new Color[(PIC_WIDTH_NEW * PIC_HEIGHT_NEW)];
 
@@ -102,14 +116,10 @@ namespace MonoEmpty.EmptyComponent
                     }
                 }
 
-            //bufPic[0] = Color.Red;
-            //bufPic[PIC_WIDTH_NEW - 1] = Color.Red;
-            //bufPic[bufPic.Length - PIC_WIDTH_NEW] = Color.Red;
-            //bufPic[bufPic.Length - 1] = Color.Red;
 
 
             RenderTarget2D tex = saveTexture;
-            if (this.saveTexture.Width != PIC_WIDTH_NEW)
+            if (this.saveTexture.Width != PIC_WIDTH_NEW || this.saveTexture.Height != PIC_HEIGHT_NEW)
                 tex = new RenderTarget2D(device, PIC_WIDTH_NEW, PIC_HEIGHT_NEW);
 
 
@@ -127,7 +137,7 @@ namespace MonoEmpty.EmptyComponent
         public void Draw(SpriteBatch spriteBatch)
         {
             if (saveTexture == null) return;
-            GetTransform.SetPosition(Vector2.One * saveTexture.Width);
+            GetTransform.SetPosition(saveTexture.Bounds.Size.ToVector2());
             spriteBatch.Draw(GetTexture(GetTransform.angle), GetTransform.Rect, Color.White);
         }
     }

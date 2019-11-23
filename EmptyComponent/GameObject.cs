@@ -5,7 +5,6 @@ namespace MonoEmpty.EmptyComponent
     public class GameObject
     {
         public Transform2D transform => GetComponent<Transform2D>();
-        private Component cachedComponent;
 
         /// <summary>
         /// Создает gameobject с указаными типами
@@ -52,14 +51,10 @@ namespace MonoEmpty.EmptyComponent
         /// <returns></returns>
         public T GetComponent<T>() where T : Component
         {
-            if (cachedComponent is T) return (T)cachedComponent;
             for (int i = 0; i < Components.Length; i++)
             {
                 if (Components[i] is T)
-                {
-                    cachedComponent = (T)Components[i];
                     return (T)Components[i];
-                }
             }
             return null;
         }

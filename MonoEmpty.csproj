@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -222,12 +223,6 @@
     <Compile Include="EmptyDebug\DebugDrawRectangle.cs" />
     <Compile Include="EmptyDebug\DebugText.cs" />
     <Compile Include="EmptyDebug\DebugTextPositionObj.cs" />
-    <Compile Include="EmptyPhisic\AbstactColider.cs" />
-    <Compile Include="EmptyPhisic\Body.cs" />
-    <Compile Include="EmptyPhisic\Colider2D.cs" />
-    <Compile Include="EmptyPhisic\ColiderPerPixel.cs" />
-    <Compile Include="EmptyPhisic\IPhisicBody.cs" />
-    <Compile Include="EmptyPhisic\World.cs" />
     <Compile Include="EmptyUI\FoxUIBase.cs" />
     <Compile Include="EmptyUI\FoxUIElements.cs" />
     <Compile Include="EmptyUI\FoxUIIPointers.cs" />
@@ -236,6 +231,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Example\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MonoGame.Framework.WindowsDX.3.7.1.189\build\MonoGame.Framework.WindowsDX.targets" Condition="Exists('packages\MonoGame.Framework.WindowsDX.3.7.1.189\build\MonoGame.Framework.WindowsDX.targets')" />

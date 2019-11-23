@@ -7,7 +7,7 @@ namespace MonoEmpty.EmptyComponent
 {
     public abstract class Component
     {
-        protected abstract Type[] ReqireComoponets { get;}
+        protected virtual Type[] ReqireComoponets => null;
         public GameObject gameObject;
         protected Component(GameObject gameObject)
         {
@@ -22,6 +22,7 @@ namespace MonoEmpty.EmptyComponent
         }
         protected void CallRequramentComponet()
         {
+            if (ReqireComoponets == null) return;
             foreach (var comp in ReqireComoponets)
             {
                 if (!gameObject.HasComponent(comp))
